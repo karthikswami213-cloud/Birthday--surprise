@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday 💖</title>
+
+<style>
+ 
+.heart {
+  position: fixed;
+  bottom: -20px;
+  font-size: 24px;
+  animation: floatHearts 4s linear forwards;
+}
+
+@keyframes floatHearts {
+  to {
+    transform: translateY(-110vh);
+    opacity: 0;
+  }
+}
+  body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg, #ffdde1, #ee9ca7);
+    color: white;
+    text-align: center;
+    overflow-x: hidden;
+  }
+
+  .container {
+    padding: 30px 20px;
+    max-width: 900px;
+    margin: auto;
+    animation: fadeIn 2s ease-in;
+  }
+
+  /* 🌟 Name + Photo Section */
+  .name-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+  }
+
+  h1 {
+    font-size: 2.5em;
+    margin: 0;
+  }
+
+  /* Glowing Name */
+  .glow {
+    position: relative;
+    color: #fff;
+    text-shadow: 
+      0 0 5px #fff,
+      0 0 10px #ff9ac4,
+      0 0 20px #ff6fa5,
+      0 0 30px #ff4d94;
+    animation: glowPulse 2s infinite alternate;
+  }
+
+  @keyframes glowPulse {
+    from {
+      text-shadow: 
+        0 0 5px #fff,
+        0 0 10px #ff9ac4,
+        0 0 20px #ff6fa5,
+        0 0 30px #ff4d94;
+    }
+    to {
+      text-shadow: 
+        0 0 10px #fff,
+        0 0 20px #ffb3d9,
+        0 0 30px #ff80bf,
+        0 0 40px #ff4da6;
+    }
+  }
+
+ /* Cute Underline Animation */
+  .underline::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 100%;
+    height: 3px;
+    background: white;
+    border-radius: 5px;
+    transform: scaleX(0);
+    transform-origin: left;
+    animation: underlineGrow 2s ease forwards;
+  }
+
+  @keyframes underlineGrow {
+    to { transform: scaleX(1); }
+  }
+
+  /* Her Photo Fade out*/
+  .name-photo {
+ 
+    width: 95px;
+    height: 95px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 3px solid white;
+    box-shadow: 0 0 15px rgba(255,255,255,0.8);
+    opacity: 0;
+    transform: translateY(20px);
+    animation: photoFade 2s ease forwards;
+    animation-delay: 1s;
+  }
+
+  @keyframes photoFade {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  h2 {
+    font-size: 1.5em;
+    font-weight: 0.2;
+    margin-bottom: 25px;
+  }
+
+  .message {
+    style="color: black;"
+    font-size: 1.0em;
+    line-height: 1.9em;
+    background: rgba(255,255,255,0.15);
+    padding: 25px;
+    border-radius: 15px;
+    backdrop-filter: blur(6px);
+  }
+
+  /* Photo Gallery */
+  .gallery {
+    margin-top: 40px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 15px;
+  }
+
+  .gallery img {
+    width: 100%;
+    border-radius: 15px;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+    transition: transform 0.4s;
+  }
+
+  .gallery img:hover {
+    transform: scale(1.05);
+  }
+
+  .footer {
+    margin-top: 40px;
+    font-size: 1em;
+    opacity: 0.9;
+  }
+
+  @keyframes fadeIn {
+    from {opacity: 0; transform: translateY(20px);}
+    to {opacity: 1; transform: translateY(0);}
+  }
+
+  /* Floating Hearts */
+  .heart {
+    position: fixed;
+    bottom: -10px;
+    font-size: 18px;
+    animation: floatUp 7s linear infinite;
+    opacity: 0.6;
+  }
+
+  @keyframes floatUp {
+    0% { transform: translateY(0); opacity: 0.7; }
+    100% { transform: translateY(-110vh); opacity: 0; }
+  }
+  #lockScreen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.lock-box {
+  background: white;
+  padding: 25px;
+  border-radius: 15px;
+  text-align: center;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+.lock-box input {
+  padding: 10px;
+  margin-top: 10px;
+  width: 80%;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+.lock-box button {
+  margin-top: 10px;
+  padding: 8px 20px;
+  border: none;
+  border-radius: 20px;
+  background: #ff4da6;
+  color: white;
+  cursor: pointer;
+}
+
+#errorMsg {
+  color: red;
+  font-size: 14px;
+  margin-top: 8px;
+}
+</style>
+</head>
+<a href="surprise.html">
+  <button class="surprise-btn">Click Here For a Surprise 💌</button>
+</a>
+<body>
+<div id="lockScreen">
+  <div class="lock-box">
+    <h2>This page is only for someone special 💖</h2>
+    <input type="password" id="passwordInput" placeholder="Enter the secret code">
+    <button onclick="checkPassword()">Unlock 🎁</button>
+    <p id="errorMsg"></p>
+  </div>
+  </div>
+</div>
+<div class="container">
+
+  <div class="name-section">
+    <h1>
+      Happiest Birthday 
+      <span class="glow underline">Sonaaaaakshiiii</span><br>
+    </h1><br>
+    
+    <img src="photo,6.jpg" alt="Her Photo" class="name-photo".
+  </div>
+
+  <h2>This page is made just for you ✨</h2>
+  <img src="photo,4.jpg" alt="Memory 4" height="400" width ="200">
+  <div class="message">
+    From the moment I got to know you, something about you just felt different.  
+    The way you smile, the way you talk, and the way you make ordinary moments feel special means more than I can explain.
+
+    <br><br>
+   <img src="photo,2.jpg" alt="Memory 2" height="160" width="250"><br>
+
+    Your smile is my favorite view, your happiness is my favorite goal, and your presence is my greatest gift.  
+    On your special day, I just want you to know how deeply you are appreciated, admired, and cared for.  
+
+    <br><br>
+  <img src="photo,3.jpg" alt="Memory 3" height="160" width="250"><br
+
+    May your life be filled with endless joy, love, success, and all the dreams your heart holds.  
+    
+
+    <br><br>
+
+    
+    
+    I’m really grateful that someone like you exists in my life.  
+    I hope this year brings you closer to your dreams and fills your days with happiness.
+   
+    Happy Birthday to the most special person in my world💕
+ <br><br>
+ 
+    Keep smiling. Keep shining. The world is better with you in it 💫
+  
+ <img src="photo,1.jpg" alt="Memory 1"height="200" width="200">
+ </div>
+  <br>
+
+  <div class="footer">
+    Made with genuine feelings 🤍
+  </div>
+
+</div>
+
+<script>
+  function createHeart() {
+    const heart = document.createElement("div");
+    heart.className = "heart";
+    heart.innerHTML = "💗";
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.animationDuration = (Math.random() * 3 + 4) + "s";
+    document.body.appendChild(heart);
+    setTimeout(() => heart.remove(), 7000);
+  }
+  setInterval(createHeart, 500);
+</script>
+<script>
+  function createHeart() {
+    const heart = document.createElement("div");
+    heart.className = "heart";
+    heart.innerHTML = "💖";
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.animationDuration = (Math.random() * 3 + 4) + "s";
+    document.body.appendChild(heart);
+    setTimeout(() => heart.remove(), 7000);
+  }
+  setInterval(createHeart, 500);
+</script>
+<script>
+function checkPassword() {
+  var correctPassword = "16211911";  // 🔁 CHANGE THIS
+  var enteredPassword = document.getElementById("passwordInput").value;
+
+  if (enteredPassword === correctPassword) {
+    document.getElementById("lockScreen").style.display = "none";
+  } else {
+    document.getElementById("errorMsg").innerText = "Wrong code, try again 💔";
+  }
+}
+</script>
+</body>
+</html>
