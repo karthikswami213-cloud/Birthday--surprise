@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-  
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
   <title>A Surprise For You 💖</title>
   <style>
     body {
@@ -47,10 +47,69 @@
       from { opacity: 0; transform: translateY(20px); }
       to { opacity: 1; transform: translateY(0); }
     }
+    
+    .balloon {
+  position: fixed;
+  font-size: 40px;
+  animation: floatBalloon 6s ease-in-out infinite;
+}
+
+.b1 { left: 5%; top: 80%; }
+.b2 { right: 5%; top: 85%; }
+
+@keyframes floatBalloon {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-40px); }
+  100% { transform: translateY(0); }
+}
+
+.stars {
+  position: fixed;
+  width: 100%;
+  top: 10px;
+  text-align: center;
+  font-size: 22px;
+  animation: twinkle 2s infinite alternate;
+}
+
+@keyframes twinkle {
+  from { opacity: 0.3; }
+  to { opacity: 1; }
+}
+
+.cake {
+  position: fixed;
+  bottom: 15px;
+  right: 15px;
+  font-size: 50px;
+  animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+  0%,100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.cake {
+  position: fixed;
+  bottom: 15px;
+  left: 15px;
+  font-size: 50px;
+  animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+  0%,100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
   </style>
 </head>
-
 <body>
+<div class="balloon b1">🎈</div>
+<div class="balloon b2">🎈</div>
+<div class="stars"> ✨✨✨✨✨✨✨</div>
+<div class="cake">🎂</div>
 
 <h1>You Found the Surprise 💖</h1>
 <p>
@@ -73,6 +132,7 @@ for (let i = 0; i < 30; i++) {
   setTimeout(() => heart.remove(), 7000);
 }
 </script>
+
 
 </body>
 </html>
